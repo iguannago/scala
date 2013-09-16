@@ -14,6 +14,7 @@
 .project
 .springBeans
 .classpath
+.class
 MANIFEST.MF
 .settings/
 .metadata/
@@ -21,6 +22,8 @@ MANIFEST.MF
 bin/
 .worksheet/
 */target/*
+**/**/project/*
+**/**/lib_managed/*
 
 # Ignore output directories
 target/*
