@@ -23,7 +23,20 @@ object Lists {
    * @param xs A list of natural numbers
    * @return The sum of all elements in `xs`
    */
-  def sum(xs: List[Int]): Int = ???
+  def sum(xs: List[Int]): Int = {
+    if (!xs.isEmpty) {
+      if (xs.size == 2) {
+        xs(0) + xs(1)
+      }else if (xs.size == 1) {
+    	  xs.head
+      }else {
+        xs.head + sum(xs.tail)
+      }
+    }else {
+      0
+    }
+  }
+    
 
   /**
    * This method returns the largest element in a list of integers. If the
@@ -38,5 +51,27 @@ object Lists {
    * @return The largest element in `xs`
    * @throws java.util.NoSuchElementException if `xs` is an empty list
    */
-  def max(xs: List[Int]): Int = ???
+  def max(xs: List[Int]): Int = {
+    if (xs.isEmpty)
+      throw new NoSuchElementException("list is empty")
+    else {
+      max(xs, 0)
+    }
+  }
+ 
+  /**
+  *  Recursive function to get the maximum value of a List
+  */ 
+  def max(xs: List[Int], n: Int): Int = {
+    if (xs(0) > n) 
+      if (xs.size == 1)
+        xs(0)
+      else
+        max(xs.tail, xs(0))
+    else if (xs.size == 1)
+        n
+        else
+          max(xs.tail, n)
+  }
+  
 }

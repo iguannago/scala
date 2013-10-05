@@ -115,10 +115,15 @@ class ListsSuite extends FunSuite {
    * every tested aspect of a method.
    */
   test("sum of a few numbers") {
-//    assert(sum(List(1,2,0)) === 3)
+//    println("sum(List(1,2,0): " + sum(List(1,2,0)))
+    assert(sum(List(1,2,0)) === 3)
   }
   
   test("max of a few numbers") {
-//    assert(max(List(3, 7, 2)) === 7)
+    assert(max(List(3, 7, 2)) === 7)
+  }
+  
+  test("max of a list") {
+    assert(max(List(2), 3) === 3)
   }
 }
